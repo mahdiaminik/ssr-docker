@@ -1,0 +1,20 @@
+version: '3'
+services:
+  ssr:    
+    image: ssr 
+    restart: on-failure:5
+    ports:
+      - 8388:8388
+    environment:
+      - PASSWORD=@Bcdef1234
+      - OBFS=http_simple
+      - PROTOCOL=origin 
+      - CIPHER=chacha20
+    cpus: 1
+    mem_reservation: 1g
+    mem_limit: 2g
+    security_opt:
+      - no-new-privileges:true
+    #volumes:
+    #  - ./shadowsocks.json.template:/shadowsocks.json.template
+
