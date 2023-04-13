@@ -1,8 +1,17 @@
-FROM	ubuntu:18.04
-ENV	OBFS=http_simple \
-	PROTOCOL=origin  \
-	CIPHER=chacha20	
-COPY 	install.sh shadowsocks.json.template ./
-RUN 	bash install.sh
-RUN	apt-get update && apt-get install -y gettext-base
-CMD     envsubst < shadowsocks.json.template > /shadowsocks.json && /usr/local/shadowsocks/server.py -c /shadowsocks.json
+FROM python:3.9-alpine
+
+ARG SSR_URL=https://github.com/winterssy/shadowsocksr/archive/manyuser.zip
+ENV PASSWORD=password \
+    METHOD=chacha20 \
+    PROTOCOL=origin \
+    OBFS=http_simple \
+    LIMIT_PER_CON=8192 \
+    LIMIT_PER_USER=81920
+
+RUN set -ex && \
+    apk add --no-cache libsodium gettext && \
+    pip --no-cache-dir install requests $SSR_URL
+
+COPY shadowsocks.json.template .
+
+CMD envsubst < shadowsocks.json.template > /shadowsocks.json && ssserver -c /shadowsocks.json

@@ -1,12 +1,11 @@
 {
     "server":"0.0.0.0",
-    "server_ipv6":"[::]",
     "server_port":8388,
     "local_address":"127.0.0.1",
     "local_port":1080,
     "password":"${PASSWORD}",
     "timeout":120,
-    "method":"${CIPHER}",
+    "method":"${METHOD}",
     "protocol":"${PROTOCOL}",
     "protocol_param":"",
     "obfs":"${OBFS}",
@@ -14,5 +13,7 @@
     "redirect":"",
     "dns_ipv6":false,
     "fast_open":false,
-    "workers":1
+    "workers":1,
+    "speed_limit_per_con":${LIMIT_PER_CON},
+    "speed_limit_per_user":${LIMIT_PER_USER}
 }

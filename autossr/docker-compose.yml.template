@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ssr:    
+    image: mahdiamini/ssr 
+    restart: on-failure:5
+    ports:
+      - {LOCAL_PORT1}:8388
+      - {LOCAL_PORT2}:8388
+    environment:
+      - PASSWORD={PASSWORD}
