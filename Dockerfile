@@ -5,6 +5,7 @@ ENV PASSWORD=password \
     METHOD=chacha20 \
     PROTOCOL=origin \
     OBFS=http_simple \
+    REDIRECT=cloudflare.com \
     LIMIT_PER_CON=8192 \
     LIMIT_PER_USER=81920
 

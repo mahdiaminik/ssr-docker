@@ -10,7 +10,7 @@
     "protocol_param":"",
     "obfs":"${OBFS}",
     "obfs_param":"",
-    "redirect":"",
+    "redirect":["${REDIRECT}"],
     "dns_ipv6":false,
     "fast_open":false,
     "workers":1,
