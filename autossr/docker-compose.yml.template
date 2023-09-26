@@ -4,7 +4,9 @@ services:
     image: mahdiamini/ssr 
     restart: on-failure:5
     ports:
-      - {LOCAL_PORT1}:8388
-      - {LOCAL_PORT2}:8388
+      - {LOCAL_PORT1}:8388/tcp
+      - {LOCAL_PORT1}:8388/udp
+      - {LOCAL_PORT2}:8388/tcp
+      - {LOCAL_PORT2}:8388/udp
     environment:
       - PASSWORD={PASSWORD}
