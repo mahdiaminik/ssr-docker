@@ -1,8 +1,14 @@
 version: '3'
+networks:
+  public-net:
+    external: true
+
 services:
   ssr:    
     image: mahdiamini/ssr 
     restart: on-failure:5
+    networks:
+      - public-net
     ports:
       - {LOCAL_PORT1}:8388/tcp
       - {LOCAL_PORT1}:8388/udp

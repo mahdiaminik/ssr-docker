@@ -35,6 +35,7 @@ indirect_list = []
 
 def main():
         with open(AUTH_FILE_PATH) as file:
+            run_list.append('docker network create -d bridge public-net;')
             for line in file:
                 line = re.sub(' +', ' ',line).strip()
                 if line[0] == '#' :
