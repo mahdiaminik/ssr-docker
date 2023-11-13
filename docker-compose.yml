@@ -12,8 +12,8 @@ services:
       #- PROTOCOL=origin 
       #- METHOD=chacha20
       #- REDIRECT=cloudflare.com
-      #- LIMIT_PER_CON=2048 #kbps
-      #- LIMIT_PER_USER=20480 #kbps
+      #- LIMIT_PER_CON=2048 #kBps
+      #- LIMIT_PER_USER=20480 #kBps
     #volumes:
       #- ./shadowsocks.json.template:/shadowsocks.json.template
     #check number of connections via : netstat -n | grep :8388 | grep ESTABLISHED | wc -l
